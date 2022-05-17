@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    SignUp
+    Netflix Sign Up
 {% endblock title %}
 
 
@@ -20,6 +20,9 @@
                 <h1 class="text-4xl font-semibold text-center ">
                     Sign Up
                 </h1>
+
+                {% csrf_token %}
+
                 <div class=" text-center my-4">
                     <p class="text-primary_red ">
                         Email already in use
@@ -54,7 +57,7 @@
 
                 <div class="text-center mt-4">
                     <p>
-                        Have account already ? <a href="/signup.html" class="text-blue-600"> Log In</a>
+                        Have account already ? <a href="{% url 'account_login' %}" class="text-blue-600"> Log In</a>
                     </p>
                 </div>
             </form>
